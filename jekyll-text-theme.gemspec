@@ -23,5 +23,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "jemoji", "~> 0.8"
 
   spec.add_development_dependency "bundler"
-  spec.add_development_dependency "rake", "~> 10.0"
+  # Allow newer `rake` (Ruby 3 compatibility). Previously locked to "~> 10.0" which
+  # breaks building some native extensions (e.g. sass-embedded) on modern Rubies.
+  spec.add_development_dependency "rake", ">= 10.0"
 end
